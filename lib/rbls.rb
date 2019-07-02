@@ -1,6 +1,7 @@
 module Rbls
   require "rbls/version"
   require "rbls/file"
+  require "rbls/finder"
   require "rbls/formatter"
   require "rbls/sorter"
   require "rbls/option"

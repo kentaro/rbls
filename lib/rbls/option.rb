@@ -1,9 +1,10 @@
 module Rbls
   class Option
-    include Formatter, Sorter
+    include Finder, Sorter, Formatter
 
-    def initialize(file_list)
-      @file_list = file_list
+    def initialize(base)
+      @base      = base
+      @file_list = []
     end 
   end
 end

@@ -13,9 +13,4 @@ class RblsCommandTest < Minitest::Test
     assert @command.respond_to? :options
     assert @command.options.length == 3
   end
-
-  def test_it_has_file_list
-    assert @command.respond_to? :file_list
-    assert @command.file_list.length > 0
-  end
 end

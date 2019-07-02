@@ -19,9 +19,5 @@ module Rbls
         r
       end
     end
-
-    def file_list
-      @file_list ||= Dir.glob('*', ::File::FNM_DOTMATCH, base: @base)
-    end
   end
 end
