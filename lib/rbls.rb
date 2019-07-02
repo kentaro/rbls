@@ -3,7 +3,7 @@ module Rbls
   require "rbls/file"
   require "rbls/formatter"
   require "rbls/option"
-  require "rbls/option/none"
+  require "rbls/option/default"
   require "rbls/option/small_a"
   require "rbls/option/small_l"
   require "rbls/option/small_r"

@@ -12,20 +12,12 @@ module Rbls
     end 
 
     def options
-      @options ||= lambda {
-        options = @opts.reduce([]) do |r, a|
-          if a.last && OPTS_MAP[a.first]
-            r << OPTS_MAP[a.first]
-          end
-          r
+      @options ||= @opts.reduce([Rbls::Option::Default]) do |r, a|
+        if a.last && OPTS_MAP[a.first]
+          r << OPTS_MAP[a.first]
         end
-
-        if options.length > 0
-          options          
-        else
-          [Option::None]
-        end
-      }.call
+        r
+      end
     end
 
     def file_list
