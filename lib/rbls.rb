@@ -2,6 +2,7 @@ module Rbls
   require "rbls/version"
   require "rbls/file"
   require "rbls/formatter"
+  require "rbls/sorter"
   require "rbls/option"
   require "rbls/option/default"
   require "rbls/option/small_a"

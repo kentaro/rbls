@@ -1,11 +1,11 @@
 module Rbls
   module Formatter
     def format
-      raise 'should be implemented in a class.'
+      eval(template, binding)
     end
 
     def template
-      @template ||= DATA.join('').chomp
+      raise 'should be implemented in a class.'
     end
   end
 end
