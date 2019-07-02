@@ -1,9 +1,17 @@
 module Rbls
   class File
-    attr_reader :filename
+    attr_reader :path
 
-    def initialize(filename)
-      @filename = filename
+    def initialize(path)
+      @path = path
     end 
+
+    def filename
+      @filename ||= ::File.basename(@path)
+    end
+
+    def stat
+     @stat ||= ::File::Stat.new(@path)
+    end
   end
 end
