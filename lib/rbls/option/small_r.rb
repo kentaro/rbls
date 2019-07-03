@@ -5,7 +5,7 @@ module Rbls
     def format!; end
 
     def sort!
-      @file_list.reverse!
+      @command.file_list.reverse!
     end
   end
 end

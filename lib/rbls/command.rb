@@ -6,17 +6,27 @@ module Rbls
         'r' => Rbls::Option::SmallR,
     }
 
-    def initialize(opts, base='.')
-      @opts = opts
-      @base = base
+    attr_accessor :base_path, :file_list, :formatted
+
+    def initialize(opts, base_path='.')
+      @opts      = opts
+      @base_path = base_path
+      @file_list = []
+      @formatted = ""
     end 
 
     def options
-      @options ||= @opts.reduce([Rbls::Option::Default]) do |r, a|
+      @options ||= @opts.reduce([Rbls::Option::Default.new(self)]) do |r, a|
         if a.last && OPTS_MAP[a.first]
-          r << OPTS_MAP[a.first]
+          r << OPTS_MAP[a.first].new(self)
         end
         r
+      end
+    end
+
+    def execute
+      options.each do |o|
+
       end
     end
   end

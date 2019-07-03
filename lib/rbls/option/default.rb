@@ -1,22 +1,19 @@
 module Rbls
   class Option::Default < Option
     def find!
-      @file_list = Dir.glob('*', base: @base).map do |path|
+      @command.file_list = Dir.glob('*', base: @command.base_path).map do |path|
         File.new(path)
-      end
+      end.sort
     end
 
-    def sort!
-      # do nothing
-      @file_list = @file_list
-    end
+    def sort!; end
 
     def format!
-      @formatted = eval(template, binding)
+      @command.formatted = eval(template, binding)
     end
 
     def template
-      %q{@file_list.map(&:filename).join("\t")}
+      %q{@command.file_list.map(&:filename).join("\t")}
     end
   end
 end

@@ -1,12 +1,10 @@
 module Rbls
   class Option
     include Finder, Sorter, Formatter
-    attr_reader :file_list, :formatted
+    attr_reader :command
 
-    def initialize(base)
-      @base      = base
-      @file_list = []
-      @formatted = ""
+    def initialize(command)
+      @command = command
     end 
   end
 end

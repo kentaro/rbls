@@ -5,12 +5,12 @@ module Rbls
     def sort!; end
 
     def format!
-      @formatted = eval(template, binding)
+      @command.formatted = eval(template, binding)
     end
   
     def template
       # TODO
-      %q{@file_list.map(&:filename).join("\t")}
+      %q{@command.file_list.map(&:filename).join("\t")}
     end
   end
 end

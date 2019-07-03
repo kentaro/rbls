@@ -1,9 +1,9 @@
 module Rbls
   class Option::SmallA < Option
     def find!
-      @file_list = Dir.glob('*', ::File::FNM_DOTMATCH, base: @base).map do |path|
+      @command.file_list = Dir.glob('*', ::File::FNM_DOTMATCH, base: @command.base_path).map do |path|
         File.new(path)
-      end
+      end.sort
     end
 
     # do nothing
