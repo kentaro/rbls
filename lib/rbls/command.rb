@@ -24,9 +24,11 @@ module Rbls
       end
     end
 
-    def execute
-      options.each do |o|
-
+    def execute!
+      [:find!, :sort!, :format!].each do |m|
+        options.each do |o|
+          o.send(m)
+        end
       end
     end
   end
