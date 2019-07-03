@@ -1,8 +1,7 @@
 module Rbls
   module Sorter
-    def sort
-      # do nothing by default
-      @file_list
+    def sort!
+      raise 'should be implemented in a class'
     end
   end
 end

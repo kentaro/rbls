@@ -6,8 +6,8 @@ module Rbls
       end
     end
 
-    def template
-      %q{@file_list.map(&:filename).join("\t")}
-    end
+    # do nothing
+    def sort!;   end
+    def format!; end
   end
 end

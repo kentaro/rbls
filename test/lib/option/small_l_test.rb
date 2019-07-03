@@ -1,13 +1,13 @@
 require "test_helper"
 
-class RblsOptionSmallATest < Minitest::Test
+class RblsOptionSmallLTest < Minitest::Test
   def setup
-    @option = Rbls::Option::SmallA.new(ASSETS_PATH)
+    @option = Rbls::Option::SmallL.new(ASSETS_PATH)
   end
 
-  def test_it_does_find
+  def test_it_does_not_find
     @option.find!
-    assert @option.file_list.length > 0
+    assert @option.file_list.length == 0
   end
 
   def test_it_does_not_sort
@@ -16,7 +16,7 @@ class RblsOptionSmallATest < Minitest::Test
     assert orig == @option.file_list    
   end
   
-  def test_it_does_not_format
+  def test_it_does_format
     @option.format!
     assert @option.formatted == ""
   end
