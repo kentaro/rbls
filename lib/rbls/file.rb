@@ -1,5 +1,6 @@
 module Rbls
   class File
+    include Comparable
     attr_reader :path
 
     def initialize(path)
@@ -8,6 +9,16 @@ module Rbls
 
     def filename
       @filename ||= ::File.basename(@path)
+    end
+
+    def <=>(comp)
+      if filename < comp.filename
+        -1
+      elsif filename > comp.filename
+        1
+      else
+        0
+      end
     end
 
     def stat
